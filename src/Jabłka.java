@@ -25,14 +25,15 @@ public class Jabłka extends Owoc{
 
     @Override
     public int zjedz(int ile) {
-        //cos nie dziala
-        if(ile<=iloscNaMagazynie) {
-            iloscNaMagazynie -= ile;
-            System.out.println("Zjedzone! zostało: " + iloscNaMagazynie);
+        int iloscPrzed = super.getIloscNaMagazynie();
+        int iloscPo=iloscPrzed-ile;
+        if(ile<= iloscPrzed) {
+            super.setIloscNaMagazynie(iloscPo);
+            System.out.println("Zjedzone! zostało: " + super.getIloscNaMagazynie());
         }
         else{
             System.out.println("Nie ma takiej ilosci na magazynie");
         }
-        return iloscNaMagazynie;
+        return super.getIloscNaMagazynie();
     }
 }

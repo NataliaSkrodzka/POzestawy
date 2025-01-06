@@ -53,8 +53,14 @@ public class Sklep implements InterfaceSklep{
     }
     @Override
     public void wyswietlOferty() {
-        for (Produkt p : produkty) {
-            System.out.println(p.getNazwa());
+        if(this.produkty.size() == 0){
+            System.out.println("Jeszcze nie ma ofert w sklepie");
+        }
+        else {
+            System.out.println("Oferty sklepu: ");
+            for (Produkt p : produkty) {
+                System.out.println(p.getNazwa());
+            }
         }
     }
     @Override

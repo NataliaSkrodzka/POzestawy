@@ -7,7 +7,19 @@ public class Słuchawki extends UrzadzenieElektroniczne {
         super(nazwa, cena, iloscNaMagazynie);
         this.czyWlaczone = false;
     }
+    public boolean getCzyWlaczone() {
+        return czyWlaczone;
+    }
+    public void setCzyWlaczone(boolean czyWlaczone) {
+        this.czyWlaczone = czyWlaczone;
 
+    }
+    public boolean getCzyZepsute() {
+        return czyZepsute;
+    }
+    public void setCzyZepsute(boolean czyZepsute) {
+        this.czyZepsute = czyZepsute;
+    }
     @Override
     public void napraw() {
         if(czyZepsute){
@@ -22,7 +34,12 @@ public class Słuchawki extends UrzadzenieElektroniczne {
 
     @Override
     public void uzyj() {
-        System.out.println("Uzywasz słuchawek");
+        if(czyWlaczone) {
+            System.out.println("Uzywasz słuchawek");
+        }
+        else{
+            System.out.println("Najpierw musisz włączyć słuchawki");
+        }
     }
 
     @Override
